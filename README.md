@@ -9,7 +9,6 @@ make spill
 ```
 A few actions are performed under the hood with this command:
 - Any javascript files at the top-level of the repo are removed.
-- The repo is [trusted](https://stackoverflow.com/a/71941707/15332803) to prevent git from [detecting it as unsafe](https://stackoverflow.com/questions/71901632/fatal-error-unsafe-repository-home-repon-is-owned-by-someone-else) and aborting submodule updates
 - Submodules are updated (This is currently being tested to guarantee changes are actually registered)
 - The javascript files in each submodule are copied to the top-level of the directory
 
