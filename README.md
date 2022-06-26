@@ -1,9 +1,17 @@
 # cfuen/userscripts
-My userscripts for [Min](https://github.com/minbrowser/min)
+My Makefile-based userscript management workflow for [Min](https://github.com/minbrowser/min)
 
 ### Makefile-based workflow
 
-There's a setup step you must do before sudo make spill'ing
+⚠️ Currently testing!
+
+To bring your userscripts out of their folders so that Min can detect them, do:
+```bash
+sudo make 
+```
+All userscripts are automatically updated before being put out of their respective folders.
+
+<!--There's a setup step you must do before sudo make spill'ing
 
 **Option A: Become the repo owner**
 
@@ -23,3 +31,4 @@ Otherwise, you will get this error:
 ```bash
 fatal: unsafe repository ('/home/<user>/.config/Min/userscripts' is owned by someone else)
 ```
+-->
