@@ -1,3 +1,5 @@
+THIS_REPO := $(abspath $(lastword $(MAKEFILE_LIST)))
+
 clean:
 	sh ./scripts/clean.sh;
 
