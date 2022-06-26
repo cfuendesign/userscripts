@@ -5,7 +5,7 @@ My Makefile-based userscript management workflow for [Min](https://github.com/mi
 
 To bring your userscripts out of their folders so that Min can detect them, do:
 ```bash
-sudo make spill
+make spill
 ```
 A few actions are performed under the hood with this command:
 - Any javascript files at the top-level of the repo are removed.
