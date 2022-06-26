@@ -7,7 +7,7 @@ My Makefile-based userscript management workflow for [Min](https://github.com/mi
 
 To bring your userscripts out of their folders so that Min can detect them, do:
 ```bash
-sudo make 
+sudo make spill
 ```
 All userscripts are automatically updated before being put out of their respective folders.
 
