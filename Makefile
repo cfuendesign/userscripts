@@ -4,7 +4,6 @@ clean:
 	sh ./scripts/clean.sh;
 
 ask: clean
-	@echo Repository Dir: ${THIS_REPO}
 	git config --global --add safe.directory "${THIS_REPO}";
 
 update: ask

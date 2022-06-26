@@ -3,32 +3,17 @@ My Makefile-based userscript management workflow for [Min](https://github.com/mi
 
 ### Makefile-based workflow
 
-⚠️ Currently testing!
-
 To bring your userscripts out of their folders so that Min can detect them, do:
 ```bash
 sudo make spill
 ```
-All userscripts are automatically updated before being put out of their respective folders.
+A few actions are performed under the hood with this command:
+- Any javascript files at the top-level of the repo are removed.
+- The repo is [trusted](https://stackoverflow.com/a/71941707/15332803) to prevent git from [detecting it as unsafe](https://stackoverflow.com/questions/71901632/fatal-error-unsafe-repository-home-repon-is-owned-by-someone-else) and aborting submodule updates
+- Submodules are updated (This is currently being tested to guarantee changes are actually registered)
+- The javascript files in each submodule are copied to the top-level of the directory
 
-<!--There's a setup step you must do before sudo make spill'ing
-
-**Option A: Become the repo owner**
-
-*This may have security implications, so refer to your security person first.*
-```bash
-sudo chown -R <username>:<username> /home/<user>/.config/min/userscripts
-# example: sudo chown -R cfuen:cfuen /home/cfuen/.config/min/userscripts
-```
-
-**Option B: Trust the git repo**
-```bash
-git config --global --add safe.directory /home/<user>/.config/min/userscripts
-# example: git config --global --add safe.directory /home/cfuen/.config/Min/userscripts
-```
-
-Otherwise, you will get this error:
-```bash
-fatal: unsafe repository ('/home/<user>/.config/Min/userscripts' is owned by someone else)
-```
+<!-- 
+TODO: document this somewhere on the README.
+https://stackoverflow.com/questions/18136918/how-to-get-current-relative-directory-of-your-makefile
 -->
